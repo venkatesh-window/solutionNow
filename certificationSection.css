@@ -1,0 +1,36 @@
+/* Big box for certificates */
+    .certificationsCard {
+      margin-top: 40px;
+      background: rgba(255, 215, 0, 0.08);
+      border: 3px solid gold;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: box-shadow 0.3s;
+    }
+
+    .certificationsCard:hover {
+      box-shadow: 0 0 30px gold;
+    }
+
+    .certificationsCard h3 {
+      color: gold;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .certificationsCard ul {
+      list-style: none;
+      padding: 0;
+      columns: 2;
+      column-gap: 40px;
+      text-align: left;
+    }
+
+    .certificationsCard ul li {
+      margin: 10px 0;
+      font-size: 17px;
+      color: #e2e8f0;
+    }

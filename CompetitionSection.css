@@ -1,0 +1,40 @@
+/* Section for competitions and contests */
+.competitionSection {
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      padding: 70px 20px;
+      text-align: center;
+      color: #fefefe;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+    }
+
+.competitionSection h2 {
+      color: #facc15;
+      font-size: 40px;
+      text-shadow: 0 0 15px gold;
+      margin-bottom: 20px;
+    }
+
+.competitionIntro {
+      color: #cbd5e1;
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+.competitionBox {
+      background: rgba(255, 215, 0, 0.08);
+      border: 3px solid gold;
+      border-radius: 20px;
+      padding: 20px;
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      box-shadow: 0 0 25px rgba(250, 204, 21, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+.competitionBox:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 40px rgba(250, 204, 21, 0.45);
+    }

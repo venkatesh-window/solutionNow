@@ -1,0 +1,42 @@
+ /* Section to connect with people */
+    .collaborationSection {
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      padding: 70px 20px;
+      text-align: center;
+      color: #fefefe;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+    }
+
+    .collaborationSection h2 {
+      color: #facc15;
+      font-size: 40px;
+      text-shadow: 0 0 15px gold;
+      margin-bottom: 20px;
+    }
+
+    .collaborationIntro {
+      color: #cbd5e1;
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .collaborationBtn {
+      background: gold;
+      color: black;
+      border: none;
+      border-radius: 12px;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+    }
+
+    .collaborationBtn:hover {
+      background: #ffe55c;
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(250, 204, 21, 0.6);
+    }

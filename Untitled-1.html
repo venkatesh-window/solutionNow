@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Solution</title>
+  <style>
+    .headingBox {
+      background-color: #111827;
+      border: 3px solid #facc15;
+      border-radius: 16px;
+      width: 70%;
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(250, 204, 21, 0.3);
+    }
+
+    .headingBox h1 {
+      color: #facc15;
+      font-size: 60px;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .headingBox h2 {
+      color: rgb(251, 255, 4);
+      font-size: 22px;
+      font-weight: 400;
+    }
+
+    body {
+      background-color: black;
+      color: #e2e8f0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .problemSection {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border-left: 4px solid #facc15;
+      border-right: 4px solid #facc15;
+      border-radius: 12px;
+      padding: 40px 50px;
+      margin: 60px auto;
+      width: 75%;
+      color: #e2e8f0;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .problemSection:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(250, 204, 21, 0.25);
+    }
+
+    .problemSection h2 {
+      color: #facc15;
+      font-size: 36px;
+      text-align: left;
+      margin-bottom: 25px;
+    }
+
+    .problemSection ul {
+      list-style: none;
+      padding: 0;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+
+    .problemSection li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .problemSection li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #facc15;
+      font-size: 22px;
+      top: -2px;
+    }
+
+    .solutionSection {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border-left: 4px solid #22c55e;
+      border-right: 4px solid #22c55e;
+      border-radius: 12px;
+      padding: 40px 50px;
+      margin: 60px auto;
+      width: 75%;
+      color: #e2e8f0;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .solutionSection:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(34, 197, 94, 0.25);
+    }
+
+    .solutionSection ul {
+      list-style: none;
+      padding: 0;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+
+    .solutionSection li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .solutionSection li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #22c55e;
+      font-size: 22px;
+      top: -2px;
+    }
+
+    .skillsSection {
+      text-align: center;
+      padding: 50px 20px;
+      background: #0a0a0a;
+      color: #fefefe;
+    }
+
+    .skillsSection h2 {
+      color: gold;
+      font-size: 40px;
+      margin-bottom: 40px;
+      text-shadow: 0 0 15px gold;
+    }
+
+    .skillsGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .skillCard {
+      background: rgba(255, 215, 0, 0.05);
+      border: 2px solid gold;
+      border-radius: 15px;
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .skillCard:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px gold;
+    }
+
+    .skillCard h3 {
+      color: gold;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .skillCard ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skillCard ul li {
+      margin: 8px 0;
+      font-size: 16px;
+      color: #e2e8f0;
+    }
+
+    .certificationsCard {
+      margin-top: 40px;
+      background: rgba(255, 215, 0, 0.08);
+      border: 3px solid gold;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: box-shadow 0.3s;
+    }
+
+    .certificationsCard:hover {
+      box-shadow: 0 0 30px gold;
+    }
+
+    .certificationsCard h3 {
+      color: gold;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .certificationsCard ul {
+      list-style: none;
+      padding: 0;
+      columns: 2;
+      column-gap: 40px;
+      text-align: left;
+    }
+
+    .certificationsCard ul li {
+      margin: 10px 0;
+      font-size: 17px;
+      color: #e2e8f0;
+    }
+
+    .competitionSection {
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      padding: 70px 20px;
+      text-align: center;
+      color: #fefefe;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+    }
+
+    .competitionSection h2 {
+      color: #facc15;
+      font-size: 40px;
+      text-shadow: 0 0 15px gold;
+      margin-bottom: 20px;
+    }
+
+    .competitionIntro {
+      color: #cbd5e1;
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .competitionBox {
+      background: rgba(255, 215, 0, 0.08);
+      border: 3px solid gold;
+      border-radius: 20px;
+      padding: 20px;
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      box-shadow: 0 0 25px rgba(250, 204, 21, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .competitionBox:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 40px rgba(250, 204, 21, 0.45);
+    }
+
+    .internshipSection {
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      padding: 70px 20px;
+      text-align: center;
+      color: #fefefe;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+    }
+
+    .internshipSection h2 {
+      color: #facc15;
+      font-size: 40px;
+      text-shadow: 0 0 15px gold;
+      margin-bottom: 20px;
+    }
+
+    .internshipIntro {
+      color: #cbd5e1;
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .internshipBtn {
+      background: gold;
+      color: black;
+      border: none;
+      border-radius: 12px;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+    }
+
+    .internshipBtn:hover {
+      background: #ffe55c;
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(250, 204, 21, 0.6);
+    }
+
+    .projectsSection {
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      padding: 70px 20px;
+      text-align: center;
+      color: #fefefe;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+    }
+
+    .projectsSection h2 {
+      color: #facc15;
+      font-size: 40px;
+      text-shadow: 0 0 15px gold;
+      margin-bottom: 20px;
+    }
+
+    .projectsIntro {
+      color: #cbd5e1;
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .projectsBtn {
+      background: gold;
+      color: black;
+      border: none;
+      border-radius: 12px;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+    }
+
+    .projectsBtn:hover {
+      background: #ffe55c;
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(250, 204, 21, 0.6);
+    }
+
+    .collaborationSection {
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      padding: 70px 20px;
+      text-align: center;
+      color: #fefefe;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+    }
+
+    .collaborationSection h2 {
+      color: #facc15;
+      font-size: 40px;
+      text-shadow: 0 0 15px gold;
+      margin-bottom: 20px;
+    }
+
+    .collaborationIntro {
+      color: #cbd5e1;
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .collaborationBtn {
+      background: gold;
+      color: black;
+      border: none;
+      border-radius: 12px;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+    }
+
+    .collaborationBtn:hover {
+      background: #ffe55c;
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(250, 204, 21, 0.6);
+    }
+
+    .hrSection {
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      padding: 70px 20px;
+      text-align: center;
+      color: #fefefe;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+    }
+
+    .hrSection h2 {
+      color: #facc15;
+      font-size: 40px;
+      text-shadow: 0 0 15px gold;
+      margin-bottom: 20px;
+    }
+
+    .hrIntro {
+      color: #cbd5e1;
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .hrBtn {
+      background: gold;
+      color: black;
+      border: none;
+      border-radius: 12px;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+    }
+
+    .hrBtn:hover {
+      background: #ffe55c;
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(250, 204, 21, 0.6);
+    }
+
+    .guidanceSection {
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      padding: 70px 20px;
+      text-align: center;
+      color: #fefefe;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+    }
+
+    .guidanceSection h2 {
+      color: #facc15;
+      font-size: 40px;
+      text-shadow: 0 0 15px gold;
+      margin-bottom: 20px;
+    }
+
+    .guidanceIntro {
+      color: #cbd5e1;
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .guidanceBtn {
+      background: gold;
+      color: black;
+      border: none;
+      border-radius: 12px;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+    }
+
+    .guidanceBtn:hover {
+      background: #ffe55c;
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(250, 204, 21, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <div class="headingBox">
+    <h1>Solution</h1>
+    <h2 style="font-weight: bold;">One solution for all your learning needs.</h2>
+  </div>
+
+  <section class="problemSection">
+    <h2>💡 Problem</h2>
+    <ul>
+      <li>Most students do not know what skills are trending in their industry.</li>
+      <li>They struggle to find internships, mentors, or HR contacts.</li>
+      <li>They lack guidance on how to enter and grow in their chosen career paths.</li>
+      <li>They miss out on industry events and opportunities due to lack of exposure.</li>
+    </ul>
+  </section>
+
+  <section class="solutionSection">
+    <h1 style="font-weight: bold; color: #22c55e;">🚀 Solution</h1>
+    <ul>
+      <br><li>Curated learning paths based on industry trends and in-demand skills.</li>
+      <li>Networking platform to connect with professionals, mentors, and peers.</li>
+      <li>Personalized career guidance and resources for skill development.</li>
+      <li>Regular updates on industry events, internships, and job opportunities.</li>
+    </ul>
+  </section>
+
+  <section class="skillsSection">
+    <h2>🚀 Trending Skills & Certifications 2026</h2>
+
+    <div class="skillsGrid">
+      <div class="skillCard">
+        <h3>Beginner</h3>
+        <ul>
+          <li><a href="https://www.youtube.com/playlist?list=PLu0W_9lII9agwh1XjRt242xIpHhPT2llg" target="_blank">Python Programming (CodeWithHarry Full Course)</a></li>
+          <li><a href="https://www.youtube.com/watch?v=kN-tciuEGMM" target="_blank">HTML, CSS, JavaScript Projects for Beginners 2025 (Codynn)</a></li>
+          <li><a href="https://www.youtube.com/watch?v=NUELGzIHT-I" target="_blank">Git & GitHub (Ultimate Beginner's Guide 2025)</a></li>
+          <li><a href="https://www.youtube.com/playlist?list=PL8dPRcl_AkSwyz6f6lPQKj2pqnwzP6JjK" target="_blank">SQL & Databases (Complete Playlist)</a></li>
+          <li><a href="https://www.youtube.com/playlist?list=PL9RcWoqXmzaLTsR0zR6R7CU5f5UQ5bTtE" target="_blank">Linux Basics (Geeky Hub)</a></li>
+          <li><a href="https://www.youtube.com/playlist?list=PLpVhXn5ZGuPthy7ayU1NeaLthzXmoCXvF" target="_blank">Computer Networks (Knowledge Gate)</a></li>
+        </ul>
+      </div>
+
+      <div class="skillCard">
+        <h3>Intermediate</h3>
+        <ul>
+          <li>Data Structures & Algorithms (C++/Java)</li>
+          <li>Object-Oriented Programming</li>
+          <li>Web Development (React, Node.js)</li>
+          <li>Cloud Basics (AWS, Azure)</li>
+          <li>Data Visualization (Tableau, Power BI)</li>
+          <li>API Development</li>
+        </ul>
+      </div>
+
+      <div class="skillCard">
+        <h3>Advanced</h3>
+        <ul>
+          <li>Machine Learning & AI</li>
+          <li>DevOps & CI/CD</li>
+          <li>Cybersecurity</li>
+          <li>Blockchain Development</li>
+          <li>Generative AI & Prompt Engineering</li>
+          <li>Data Engineering</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="certificationsCard">
+      <h3>📜 Certifications to Boost Your Profile</h3>
+      <ul style="font-style: italic; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <li><a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank">AWS Certified Cloud Practitioner</a></li>
+        <li><a href="https://www.coursera.org/professional-certificates/google-data-analytics" target="_blank">Google Data Analytics Professional Certificate</a></li>
+        <li><a href="https://learn.microsoft.com/en-us/certifications/azure-fundamentals/" target="_blank">Microsoft Azure Fundamentals (AZ-900)</a></li>
+        <li><a href="https://www.coursera.org/learn/machine-learning" target="_blank">Coursera Machine Learning by Andrew Ng</a></li>
+        <li><a href="https://www.coursera.org/professional-certificates/ai-engineer" target="_blank">IBM AI Engineering Professional Certificate</a></li>
+        <li><a href="https://www.coursera.org/professional-certificates/meta-front-end-developer" target="_blank">Meta Front-End Developer Certificate</a></li>
+        <li><a href="https://www.netacad.com/courses/cybersecurity/essentials" target="_blank">Cybersecurity Essentials (Cisco)</a> / <a href="https://www.ibm.com/training/certification/cybersecurity" target="_blank">Cybersecurity Essentials (IBM)</a></li>
+        <li><a href="https://www.coursera.org/professional-certificates/google-cybersecurity" target="_blank">Google Cybersecurity Certificate</a></li>
+        <li><a href="https://www.oracle.com/in/education/training/java/" target="_blank">Oracle Java Foundations Certification</a></li>
+        <li><a href="https://www.redhat.com/en/services/training-and-certification" target="_blank">Red Hat Linux Certification</a></li>
+        <li><a href="https://www.tensorflow.org/certificate" target="_blank">TensorFlow Developer Certificate</a></li>
+        <li><a href="https://www.coursera.org/specializations/jhu-data-science" target="_blank">Data Science Specialization (Johns Hopkins / Coursera)</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="competitionSection">
+    <h2>🏆 Competitions & Opportunities</h2>
+    <p class="competitionIntro">
+      Stay ahead by exploring the latest tech and innovation competitions.
+      Participate, learn, and showcase your talent on a global stage!
+    </p>
+    <p>Disclaimer: Sign in with your Cit college email id to access the document.</p>
+    <div class="competitionBox">
+      <iframe 
+        src="https://docs.google.com/spreadsheets/d/19s4dN-0-rjACV0q8JIdloiMI2ErUpGo85hsNhKLkUqo/edit?gid=0#gid=0"
+        width="100%" 
+        height="600"
+        style="border:none; border-radius:16px;">
+      </iframe>
+    </div>
+  </section>
+
+  <section class="internshipSection">
+    <h2>💼 Internships & Opportunities</h2>
+    <p class="internshipIntro">
+      Explore top internship opportunities from startups, MNCs, and global organizations.  
+      Learn real-world skills, build your network, and kickstart your career with hands-on experience.
+    </p>
+    <button class="internshipBtn" onclick="window.open('https://unstop.com/internship-portal', '_blank')">
+      🔗 Visit Internship Portal
+    </button>
+  </section>
+
+  <section class="projectsSection">
+    <h2>💡 Top 500 Project Ideas with Source Code</h2>
+    <p class="projectsIntro">
+      Explore 500+ innovative project ideas along with source code.  
+      Perfect for learning, portfolio building, and hands-on practice in 2026.
+    </p>
+    <button class="projectsBtn" onclick="window.open('https://drive.google.com/file/d/1JLC0TA5FAG8suI_14Z4gk6RXnSzNxwUV/view?usp=drivesdk', '_blank')">
+      🔗 Download Project Ideas
+    </button>
+  </section>
+
+  <section class="collaborationSection">
+    <h2>🤝 Collaborate & Connect</h2>
+    <p class="collaborationIntro">
+      Connect with us on LinkedIn to explore collaborations, mentorship, and networking opportunities.  
+      Let's innovate, learn, and grow together!
+    </p>
+    <button class="collaborationBtn" onclick="window.open('https://www.linkedin.com', '_blank')">
+      🔗 Visit LinkedIn
+    </button>
+  </section>
+
+  <section class="hrSection">
+    <h2>📇 HR Contacts for Job Opportunities</h2>
+    <p class="hrIntro">
+      You've learnt everything and now it's time to connect with recruiters!  
+      Access 1800+ verified HR contacts to kickstart your job search.
+    </p>
+    <button class="hrBtn" onclick="window.open('https://drive.google.com/file/d/1ElqmcwDgCfR2F5usHmK93JAsm8V4scIQ/view?usp=drivesdk', '_blank')">
+      🔗 Access HR Contacts
+    </button>
+  </section>
+
+  <section class="guidanceSection">
+    <h2>🎙 Podcasts, Expert Guidance & Industry Insights</h2>
+    <p class="guidanceIntro">
+      Stay updated with podcasts, interviews, and expert advice. 
+      Fill industry gaps, learn from professionals, and accelerate your career growth From TEAM IMPACT CIT.
+    </p>
+    <button class="guidanceBtn" onclick="window.open('https://linktr.ee/IMPACT_CIT?fbclid=PAdGRzdgNgXHNleHRuA2FlbQIxMQABp9Qt9JQWy7hcT-RNxth6aPHbha-CZe9imKnut2O96vscLvtbMO9Ng6PEilLO_aem_UhuLypLa4_fBtKJDWQiCOQ', '_blank')">
+      🔗 Access Resources on Linktree
+    </button>
+  </section>
+</body>
+</html>

@@ -1,0 +1,47 @@
+    /* This box talks about problems students face */
+    .problemSection {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border-left: 4px solid #facc15;
+      border-right: 4px solid #facc15;
+      border-radius: 12px;
+      padding: 40px 50px;
+      margin: 60px auto;
+      width: 75%;
+      color: #e2e8f0;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .problemSection:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(250, 204, 21, 0.25);
+    }
+
+    .problemSection h2 {
+      color: #facc15;
+      font-size: 36px;
+      text-align: left;
+      margin-bottom: 25px;
+    }
+
+    .problemSection ul {
+      list-style: none;
+      padding: 0;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+
+    .problemSection li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .problemSection li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #facc15;
+      font-size: 22px;
+      top: -2px;
+    }

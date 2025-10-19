@@ -1,0 +1,33 @@
+    /* This is the main box at the top with the title */
+    .headingBox {
+      background-color: #111827;
+      border: 3px solid #facc15;
+      border-radius: 16px;
+      width: 70%;
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(250, 204, 21, 0.3);
+    }
+
+    .headingBox h1 {
+      color: #facc15;
+      font-size: 60px;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .headingBox h2 {
+      color: rgb(251, 255, 4);
+      font-size: 22px;
+      font-weight: 400;
+    }
+
+    body {
+      background-color: black;
+      color: #e2e8f0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
